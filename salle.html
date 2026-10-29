@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr" data-theme="nexus">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horloges SD · Affichage de salle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=Big+Shoulders+Display:wght@600;800&display=swap">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/salle.css">
+</head>
+<body class="salle">
+  <div class="wrap">
+    <section class="left">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"><i></i><i></i></span>
+        <span class="brand-title" id="sessionTitle">Session de dialogue</span>
+      </div>
+
+      <div class="clock tabular" id="clock" aria-label="Heure actuelle">--:--<span class="sec">--</span></div>
+      <div class="date" id="date"></div>
+
+      <div class="now" id="now" aria-live="polite">
+        <div class="now-label" id="nowLabel">—</div>
+        <div class="now-title" id="nowTitle">—</div>
+        <div class="now-detail" id="nowDetail"></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="barWrap"><i id="bar"></i></div>
+        <div class="now-meta tabular"><span id="nowRange"></span><b id="nowLeft"></b></div>
+      </div>
+
+      <div class="next" id="next"></div>
+    </section>
+
+    <aside class="right" aria-label="Programme de la session">
+      <h2>Programme</h2>
+      <div class="agenda-scroll" id="agendaScroll"><ol class="agenda" id="agenda"></ol></div>
+      <div class="foot">
+        <span class="powered" id="powered"><span class="logo" aria-hidden="true"><i></i><i></i></span>Powered by <b>Nexus</b></span>
+        <span class="wake" id="wake" role="status"></span>
+        <button class="btn" id="fs" type="button">Plein écran</button>
+      </div>
+      <p class="keys">Raccourcis : <kbd>F</kbd> plein écran · <kbd>→</kbd> point suivant · <kbd>←</kbd> point précédent · <kbd>Espace</kbd> pause</p>
+    </aside>
+  </div>
+
+  <script src="js/core.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/salle.js"></script>
+</body>
+</html>

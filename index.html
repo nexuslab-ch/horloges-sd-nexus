@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr" data-theme="nexus">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horloges SD · Préparation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=Big+Shoulders+Display:wght@600;800&display=swap">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/prep.css">
+</head>
+<body class="prep">
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"><i></i><i></i></span>
+      <div>
+        <h1>Horloges SD</h1>
+        <p>Préparer et afficher le timing des sessions de dialogue · Nexus</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span class="saved" id="saved" role="status" aria-live="polite"></span>
+      <button class="btn" id="themeBtn" type="button">Thème : Nexus</button>
+      <button class="btn btn-primary" id="openRoom" type="button">Ouvrir l'affichage de salle ↗</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel sessions" aria-label="Sessions enregistrées">
+      <h2>Sessions</h2>
+      <ul class="session-list" id="sessionList"></ul>
+      <div class="stack">
+        <button class="btn" id="newSession" type="button">+ Nouvelle session</button>
+        <button class="btn" id="dupSession" type="button">Dupliquer</button>
+        <button class="btn btn-danger" id="delSession" type="button">Supprimer</button>
+      </div>
+      <details class="more">
+        <summary>Sauvegarde</summary>
+        <div class="stack">
+          <button class="btn" id="exportBtn" type="button">Exporter (JSON)</button>
+          <label class="btn" for="importFile">Importer (JSON)</label>
+          <input class="sr-only" type="file" id="importFile" accept="application/json,.json">
+          <button class="btn" id="restoreBtn" type="button">Remettre les exemples</button>
+        </div>
+        <p class="hint">Les sessions sont enregistrées automatiquement dans ce navigateur.</p>
+      </details>
+    </aside>
+
+    <section class="main">
+      <section class="panel">
+        <h2>Session</h2>
+        <div class="grid-form">
+          <label class="field wide"><span>Titre</span><input id="fTitle" type="text" autocomplete="off"></label>
+          <label class="field"><span>Date</span><input id="fDate" type="date"></label>
+          <label class="field"><span>Début</span><input id="fStart" type="time" step="60"></label>
+          <label class="field"><span>Thème</span>
+            <select id="fTheme"><option value="nexus">Nexus</option><option value="sombre">Sombre</option></select>
+          </label>
+          <label class="field wide"><span>Notes</span><textarea id="fNotes" rows="2" placeholder="Changements de dernière minute, remarques…"></textarea></label>
+        </div>
+      </section>
+
+      <section class="panel live" aria-label="Chronomètre">
+        <div class="live-head">
+          <div>
+            <h2>Chronomètre</h2>
+            <p class="live-status" id="liveStatus">—</p>
+          </div>
+          <div class="live-actions">
+            <button class="btn btn-accent" id="startBtn" type="button">▶ Démarrer</button>
+            <button class="btn" id="pauseBtn" type="button">⏸ Pause</button>
+            <button class="btn" id="prevBtn" type="button" aria-label="Point précédent">← Précédent</button>
+            <button class="btn" id="nextBtn" type="button" aria-label="Point suivant">Suivant →</button>
+            <button class="btn btn-danger" id="resetBtn" type="button">Réinitialiser</button>
+          </div>
+        </div>
+        <label class="check"><input type="checkbox" id="fAuto"> Avance automatique (passer au point suivant à la fin de sa durée, sans clic)</label>
+      </section>
+
+      <section class="panel">
+        <div class="agenda-head">
+          <h2>Ordre du jour</h2>
+          <p class="total tabular" id="total"></p>
+        </div>
+        <div class="table-wrap">
+          <table class="agenda-table">
+            <thead>
+              <tr>
+                <th scope="col" class="c-order"><span class="sr-only">Ordre</span></th>
+                <th scope="col" class="c-time">Horaire</th>
+                <th scope="col">Point</th>
+                <th scope="col" class="c-dur">Durée (min)</th>
+                <th scope="col" class="c-pause">Pause</th>
+                <th scope="col" class="c-act"><span class="sr-only">Actions</span></th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <button class="btn" id="addItem" type="button">+ Ajouter un point</button>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/prep.js"></script>
+</body>
+</html>

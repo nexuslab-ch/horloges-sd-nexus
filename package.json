@@ -1,0 +1,11 @@
+{
+  "name": "horloges-sd-nexus",
+  "version": "1.0.0",
+  "description": "Préparer et afficher le timing des sessions de dialogue (SD) · Nexus",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes http-server . -p 8080 -c-1 -o",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
