@@ -1,0 +1,65 @@
+/*
+ * ============================================================
+ *  THÈMES · c'est ici qu'on change les couleurs et les polices
+ * ============================================================
+ *  Chaque thème est un bloc [data-theme="..."] qui redéfinit les mêmes
+ *  variables. Pour personnaliser, modifiez seulement les valeurs.
+ *  Les polices viennent de Google Fonts (lien dans index.html et salle.html).
+ *  Sans connexion, le navigateur utilise la police de repli indiquée.
+ */
+
+/* ---------- Thème « Nexus » ----------
+ * Couleurs et police reprises du fichier de style de nexus-lab.ch
+ * (variables --cream, --ink, --coral, police Manrope).
+ */
+:root,
+[data-theme="nexus"] {
+  color-scheme: light;
+  --bg: #FAF9F7;          /* fond de page (cream) */
+  --surface: #FFFFFF;     /* cartes, tableaux */
+  --surface-2: #F2F0EC;   /* fond secondaire (cream-2) */
+  --line: #E6E3DE;        /* bordures */
+  --fg: #1D1D1F;          /* texte principal (ink) */
+  --muted: #6E6E73;       /* texte secondaire (ink-3) */
+  --accent: #FF5F57;      /* couleur d'accent (coral) */
+  --accent-ink: #C43A32;  /* accent lisible sur fond clair (coral-deep) */
+  --accent-soft: #FFE3E1; /* fond léger d'accent (coral-soft) */
+  --hero-bg: #1D1D1F;     /* carte « point en cours » */
+  --hero-fg: #FAF9F7;
+  --hero-muted: #C7C7CC;
+  --hero-track: #2C2C2E;
+  --pause: #5B7FB8;       /* pauses (bleu « planning » du site) */
+  --pause-soft: #E7EDF7;
+  --over: #E5484D;        /* dépassement */
+  --font-ui: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-clock: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --clock-weight: 800;
+  --radius: 20px;
+  --radius-s: 12px;
+}
+
+/* ---------- Thème « Sombre » (session du matin) ---------- */
+[data-theme="sombre"] {
+  color-scheme: dark;
+  --bg: #0F1620;
+  --surface: #17212E;
+  --surface-2: #121A25;
+  --line: #2A3747;
+  --fg: #EEF2F6;
+  --muted: #8C9BAD;
+  --accent: #F2B63D;
+  --accent-ink: #F2B63D;
+  --accent-soft: rgba(242, 182, 61, 0.14);
+  --hero-bg: #17212E;
+  --hero-fg: #EEF2F6;
+  --hero-muted: #8C9BAD;
+  --hero-track: #2A3747;
+  --pause: #7FB2D9;
+  --pause-soft: rgba(127, 178, 217, 0.14);
+  --over: #FF6B6B;
+  --font-ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-clock: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --clock-weight: 800;
+  --radius: 14px;
+  --radius-s: 10px;
+}
